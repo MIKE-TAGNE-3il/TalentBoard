@@ -58,7 +58,7 @@ public class ApplicationController {
         List<Map<String, Object>> result = applicationRepository
                 .findByApplicantIdOrderByAppliedAtDesc(user.getId())
                 .stream()
-                .map(app -> Map.of(
+                .map(app -> Map.<String, Object>of(
                         "id", app.getId(),
                         "jobTitle", app.getJob().getTitle(),
                         "company", app.getJob().getCompany(),
